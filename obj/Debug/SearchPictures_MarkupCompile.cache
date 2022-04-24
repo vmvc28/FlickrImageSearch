@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-V:\Personal\Intuit\SearchPictures\obj\Debug\
+V:\Personal\Intuit\New\SearchPictures\obj\Debug\
 SearchPictures
 none
 false
 DEBUG;TRACE
-V:\Personal\Intuit\SearchPictures\App.xaml
+V:\Personal\Intuit\New\SearchPictures\App.xaml
 11151548125
 
 7910968247
 13152784993
 MainWindow.xaml;
 
-False
+True
 
