@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\IImageData.cs" />
     <Compile Include="Model\ISearchPicturesModel.cs" />
     <Compile Include="ViewModel\ISearchViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -77,7 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\FlikarSearch.cs" />
+    <Compile Include="Model\ImageData.cs" />
     <Compile Include="View\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
       <SubType>Code</SubType>

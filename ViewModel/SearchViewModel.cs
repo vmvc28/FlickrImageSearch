@@ -13,13 +13,13 @@ namespace SearchPictures.ViewModel
     {
         private ICommand mySearchButtonClicked;
         private readonly ISearchPicturesModel mySearchModel;
-        private IList<FlikarSearch> myImageData;
+        private IList<ImageData> myImageData;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string SearchText { get; set; }
 
-        public IList<FlikarSearch> ImageData
+        public IList<ImageData> Images
         {
             get => myImageData;
             set
@@ -49,7 +49,7 @@ namespace SearchPictures.ViewModel
 
         private void UpdateImageData(object sender, ImageDataEventArgs e)
         {
-            ImageData = e.Images;
+            Images = e.Images;
         }
 
         private void SearchButtonClicked()

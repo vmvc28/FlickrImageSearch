@@ -8,7 +8,7 @@ namespace SearchPictures.ViewModel
 {
     public interface ISearchViewModel
     {
-        IList<FlikarSearch> ImageData { get; set; }
+        IList<ImageData> Images { get; set; }
         ICommand SearchButtonClickCommand { get; set; }
         string SearchText { get; set; }
     }

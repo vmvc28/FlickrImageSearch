@@ -32,7 +32,7 @@ namespace SearchPictures.Model
             XDocument doc = XDocument.Parse(await httpResponseMessage.Content.ReadAsStringAsync());
 
             var imageData = doc.Descendants("photo")
-                .Select(results => new FlikarSearch
+                .Select(results => new ImageData
                 {
                     PhotosId = results.Attribute("id")?.Value.ToString(),
                     ImgTitle = results.Attribute("title")?.Value.ToString(),

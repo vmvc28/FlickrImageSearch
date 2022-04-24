@@ -35,7 +35,7 @@
 
         <Grid Grid.Row="2" Margin="30,0,30,0">
 
-            <ListView x:Name="ImageList" VerticalAlignment="Top" ItemsSource="{Binding ImageData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Background="SteelBlue">
+            <ListView x:Name="ImageList" VerticalAlignment="Top" ItemsSource="{Binding Images, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Background="SteelBlue">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel  />

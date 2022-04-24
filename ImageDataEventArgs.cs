@@ -8,9 +8,9 @@ namespace SearchPictures
 {
     public class ImageDataEventArgs : EventArgs
     {
-        public IList<FlikarSearch> Images { get; }
+        public IList<ImageData> Images { get; }
 
-        public ImageDataEventArgs(IList<FlikarSearch> images)
+        public ImageDataEventArgs(IList<ImageData> images)
         {
             Images = images;
         }

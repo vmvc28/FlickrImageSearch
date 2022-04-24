@@ -3,7 +3,7 @@
 
 namespace SearchPictures.Model
 {
-    public class FlikarSearch
+    public class ImageData : IImageData
     {
         public string PhotosId { get; set; }
         public string ImgTitle { get; set; }
