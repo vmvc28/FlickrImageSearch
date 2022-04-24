@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 
 namespace SearchPictures.Model
 {
@@ -6,6 +8,6 @@ namespace SearchPictures.Model
     {
         event EventHandler<ImageDataEventArgs> UpdateImageData;
 
-        void SearchButtonClick(string searchString);
+        Task SearchButtonClick(string searchString);
     }
 }

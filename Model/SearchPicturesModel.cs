@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 
@@ -16,7 +17,7 @@ namespace SearchPictures.Model
 
         public event EventHandler<ImageDataEventArgs> UpdateImageData;
 
-        public async void SearchButtonClick(string searchString)
+        public async Task SearchButtonClick(string searchString)
 
         {
             myHttpClient = new HttpClient();
