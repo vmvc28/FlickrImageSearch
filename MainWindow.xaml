@@ -1,0 +1,53 @@
+﻿<Window x:Class="SearchPictures.MainWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:SearchPictures"
+      mc:Ignorable="d"
+      Title="MainWindow" Height="450" Width="800">
+    <Grid Background="SteelBlue">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="100" />
+
+            <RowDefinition Height="100" />
+
+            <RowDefinition Height="700" />
+
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text="Flickr Photo Search" Margin="30" FontSize="30" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+            <TextBox x:Name="ImgText" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30" />
+
+            <Button x:Name="SearchBtn" Content="Search Photos" Height="40" Click="SearchBtn_Click" />
+
+        </StackPanel>
+
+        <Grid  Grid.Row="2" Margin="30,0,0,0">
+
+            <ListView x:Name="ImageList"  VerticalAlignment="Top">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Image Source="{Binding ImgUrl}" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
