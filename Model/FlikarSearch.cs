@@ -1,9 +1,9 @@
 ﻿using System;
 
 
-namespace SearchPictures
+namespace SearchPictures.Model
 {
-    internal class FlikarSearch
+    public class FlikarSearch
     {
         public string PhotosId { get; set; }
         public string ImgTitle { get; set; }
