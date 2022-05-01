@@ -9,47 +9,62 @@
         <viewModel:SearchViewModel />
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+
     <Grid Background="SteelBlue">
-
         <Grid.RowDefinitions>
-
-            <RowDefinition Height="100" />
-
-            <RowDefinition Height="100" />
-
-            <RowDefinition Height="700" />
-
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Flickr Photo Search" Margin="30" FontSize="30" />
+        <TextBlock Text="Flickr Photo Search" Margin="10" FontSize="30" HorizontalAlignment="Center" />
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-
-            <TextBox x:Name="ImgText" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30"
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox x:Name="ImgText" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Height="30"
                      Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button x:Name="SearchBtn" Content="Search Photos" Height="40" Command="{Binding SearchButtonClickCommand}" />
-
+            <Button x:Name="SearchBtn" Content="Search Photos" Height="30" Command="{Binding SearchButtonClickCommand}" />
         </StackPanel>
 
-        <Grid Grid.Row="2" Margin="30,0,30,0">
-
-            <ListView x:Name="ImageList" VerticalAlignment="Top" ItemsSource="{Binding Images, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Background="SteelBlue">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel  />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
+        <Grid Grid.Row="2" Margin="30,0,0,0" HorizontalAlignment="Center">
+            <ListView ItemsSource="{Binding Images}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="SteelBlue" MaxHeight="500"
+                      MaxWidth="500" BorderBrush="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" >
-                            <Image Source="{Binding ImgUrl}" VerticalAlignment="Top" Height="70"/>
-                        </StackPanel>
+                        <Grid HorizontalAlignment="Center">
+                            <Image Source="{Binding ImgUrl}" MaxHeight="100" MaxWidth="100" Stretch="Fill" />
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
             </ListView>
+        </Grid>
 
+        <Grid Grid.Row="3" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="First" Command="{Binding FirstButtonClickedCommand}" />
+                <Button Content="Previous" Command="{Binding PreviousButtonClickedCommand}" />
+                <TextBlock Width="auto" Text="{Binding CurrentPage}" />
+                <TextBlock Text="of" />
+                <TextBlock Width="auto" Text="{Binding TotalPages}" />
+                <Button Content="Next" Command="{Binding NextButtonClickedCommand}" />
+                <Button Content="Last" Command="{Binding LastButtonClickedCommand}" />
+            </StackPanel>
         </Grid>
 
     </Grid>

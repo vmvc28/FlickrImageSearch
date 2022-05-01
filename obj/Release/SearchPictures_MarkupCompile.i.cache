@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-V:\Personal\Intuit\New\SearchPictures\obj\Debug\
+V:\Personal\Intuit\New\SearchPictures\obj\Release\
 SearchPictures
 none
 false
-DEBUG;TRACE
+TRACE
 V:\Personal\Intuit\New\SearchPictures\App.xaml
 2-1579151989
 
-14959069934
+15-1286954144
 13152784993
 MainWindow.xaml;View\Search.xaml;
 

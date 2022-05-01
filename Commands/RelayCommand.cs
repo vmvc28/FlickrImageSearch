@@ -2,7 +2,7 @@
 using System.Windows.Input;
 
 
-namespace SearchPictures
+namespace SearchPictures.Commands
 {
     public class RelayCommand : ICommand
     {

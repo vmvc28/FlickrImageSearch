@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using SearchPictures.Model;
 
-
-namespace SearchPictures
+namespace SearchPictures.Model
 {
     public class ImageDataEventArgs : EventArgs
     {

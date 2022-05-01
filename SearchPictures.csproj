@@ -55,16 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\IImageData.cs" />
-    <Compile Include="Model\ISearchPicturesModel.cs" />
+    <Compile Include="DAL\IImagesSourceStrategy.cs" />
     <Compile Include="ViewModel\ISearchViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="ImageDataEventArgs.cs" />
-    <Compile Include="Model\SearchPicturesModel.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\ImageDataEventArgs.cs" />
+    <Compile Include="DAL\FlickrImagesStrategy.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

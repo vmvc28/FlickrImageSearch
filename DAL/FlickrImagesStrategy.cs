@@ -4,10 +4,12 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+using SearchPictures.Model;
 
-namespace SearchPictures.Model
+
+namespace SearchPictures.DAL
 {
-    public class SearchPicturesModel : ISearchPicturesModel
+    public class FlickrImagesStrategy : IImagesSourceStrategy
     {
         private HttpClient myHttpClient;
 
@@ -17,7 +19,8 @@ namespace SearchPictures.Model
 
         public event EventHandler<ImageDataEventArgs> UpdateImageData;
 
-        public async Task SearchButtonClick(string searchString)
+        /// <see cref="IImagesSourceStrategy.GetDataFromSource"/>
+        public async Task GetDataFromSource(string searchString)
 
         {
             myHttpClient = new HttpClient();
@@ -37,8 +40,8 @@ namespace SearchPictures.Model
                 {
                     PhotosId = results.Attribute("id")?.Value.ToString(),
                     ImgTitle = results.Attribute("title")?.Value.ToString(),
-                    Scrt = results.Attribute("secret")?.Value.ToString(),
-                    FarmeId = results.Attribute("farm")?.Value.ToString(),
+                    Secret = results.Attribute("secret")?.Value.ToString(),
+                    FrameId = results.Attribute("farm")?.Value.ToString(),
                     ServerId = results.Attribute("server")?.Value.ToString()
                 }).ToList();
 
