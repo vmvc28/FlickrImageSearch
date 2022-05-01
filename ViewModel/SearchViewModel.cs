@@ -47,8 +47,9 @@ namespace SearchPictures.ViewModel
                 myItemCount = AllImages.Count;
                 CalculateTotalPages();
             }
-        } 
+        }
 
+        /// <see cref="ISearchViewModel.Images"/>
         public IList<ImageData> Images
         {
             get => myImageData;
